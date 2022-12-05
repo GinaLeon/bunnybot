@@ -4,6 +4,7 @@ from nextcord.ext import commands
 
 
 
+
 intents = nextcord.Intents.default()
 intents.message_content = True
 intents.members = True
@@ -21,6 +22,11 @@ async def hello(interaction: nextcord.Interaction):
     print("interaction object")
     print(interaction)
     await interaction.send("sup", ephemeral=True)
+@client.slash_command(description="Replies with fuck off", guild_ids=[testingSERVERID])
+async def stop(interaction: nextcord.Interaction):
+    print("running stop: command")
+    print("interaction object")
+    print(interaction)
+    await interaction.send("hush, i'm trying to sleep", ephemeral=True)
 
-
-client.run('MTA0ODM4NzQ1NzEyNjc2MDQ4OA.G8oTSz.T95qXf2g4OhcKhWTbn5AR1Jz4F2ERpw4Bzc064')
+client.run('MTA0ODM4NzQ1NzEyNjc2MDQ4OA.GlSLMI.lPc_daSPn-ytrI80jXPOMbOBahF_s7wNpny7H')
